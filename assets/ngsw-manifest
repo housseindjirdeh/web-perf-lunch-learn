@@ -1,0 +1,17 @@
+//ngsw-manifest.json (outputted)
+
+{
+  "static": {
+    "urls": {
+      "/polyfills.bundle.js": "ba83d3",
+      "/main.bundle.js": "16431a0",
+      "/sw-register.bundle.js": "a9827d",
+      "/vendor.bundle.js": "12264e",
+      "/inline.bundle.js": "6e1f2d",
+      "/styles.bundle.css": "da39a3",
+      "/favicon.ico": "841b3d",
+      "/index.html": "23497e"
+    },
+    "_generatedFromWebpack": true
+  }
+}

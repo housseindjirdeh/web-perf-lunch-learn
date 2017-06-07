@@ -1,0 +1,19 @@
+//ngsw-manifest.json (custom in root)
+
+{
+  "routing": {
+    "index": "/index.html",
+    "routes": {
+      "/": {
+        "prefix": false
+      },
+      "/route": {
+        "prefix": true
+      }
+    }
+  },
+  "push": {
+    "showNotifications": true,
+    "backgroundOnly": true
+  }
+}

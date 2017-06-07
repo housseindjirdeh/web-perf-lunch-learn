@@ -1,0 +1,18 @@
+npm install --save-dev @angular/service-worker
+
+//angular-cli.json
+{
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      ...
+      "serviceWorker": true,
+      ...
+    }
+  ]
+}

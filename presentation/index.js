@@ -13,7 +13,6 @@ import {
   Slide,
   Image,
   Text,
-  Cite,
   Layout,
   Fill,
   Spectacle
@@ -44,12 +43,15 @@ const images = {
   appShellContent: require("../assets/app-shell-content.png"),
   cogs: require("../assets/cogs.png"),
   webpack: require("../assets/webpack.svg"),
+  workbox: require("../assets/workbox-logo.png"),
+  angular: require("../assets/angular-logo.svg"),
   androidInstallBanner: require("../assets/install-to-home-screen.png"),
   androidInstalled: require("../assets/android-installed.png"),
   androidSplash: require("../assets/android-splash.png"),
-  androidApp: require("../assets/android-app.png"),
+  angularMobile: require("../assets/angular2hn-mobile.png"),
+  reactMobile: require("../assets/reacthn-mobile.png"),
+  polymerMobile: require("../assets/polymer-mobile.png"),
   iosApp: require("../assets/ios-app.gif"),
-  angular2hn: require("../assets/angular2-hn.png"),
   citii: require("../assets/citii.png"),
   emptyPhone: require("../assets/empty-phone.png"),
   hnpwaShowcase: require("../assets/hnpwa-showcase.jpg"),
@@ -75,7 +77,7 @@ export default class Presentation extends React.Component {
         <Deck transitionDuration={500} theme={theme}>
           <Slide transition={["slide"]} bgColor="primary">
             <Image src={images.xkcd.replace("/", "")} margin="0px auto 40px" height="600px"/>
-             <Text textSize="0.3em" margin="20px 0px 0px" bold>XKCD / Installing</Text>
+             <Text textSize="0.5em" margin="20px 0px 0px" bold>XKCD / Installing</Text>
           </Slide>
           <Slide transition={["slide"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="secondary">
@@ -300,6 +302,107 @@ export default class Presentation extends React.Component {
               </Heading>
             </Appear>
           </Slide>
+          <Slide transition={["slide"]} bgColor="primary" textColor="seconday">
+            <Appear>
+              <Heading size={6} textColor="seconday">SWPrecacheWebpackPlugin</Heading>
+            </Appear>
+            <Layout>
+              <Fill>
+                <Image src={images.cogs} height="250px"/>
+              </Fill>
+              <Fill>
+                <Image src={images.webpack} height="250px"/>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="primary" textColor="seconday">
+            <Image src={images.workbox} width="600px"/>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="primary" textColor="seconday">
+            <Appear>
+              <Heading size={6} textColor="seconday">@angular/service-worker</Heading>
+            </Appear>
+            <Layout>
+              <Fill>
+                <Image src={images.cogs} height="250px"/>
+              </Fill>
+              <Fill>
+                <Image src={images.angular} height="250px"/>
+              </Fill>
+            </Layout>
+          </Slide>
+          <CodeSlide
+            transition={["fade"]}
+            lang="js"
+            code={require("raw-loader!../assets/angular-service-worker")}
+            ranges={[
+              { loc: [0, 1], title: "@angular/service-worker" },
+              { loc: [2, 18] },
+              { loc: [13, 14] }
+            ]}
+          />
+          <CodeSlide
+            transition={["fade"]}
+            lang="js"
+            code={require("raw-loader!../assets/ngsw-manifest")}
+            ranges={[
+              { loc: [0, 1], title: "ngsw-manifest" },
+              { loc: [3, 4] },
+              { loc: [5, 13] }
+            ]}
+          />
+          <CodeSlide
+            transition={["fade"]}
+            lang="js"
+            code={require("raw-loader!../assets/ngsw-manifest-local")}
+            ranges={[
+              { loc: [0, 1], title: "ngsw-manifest" },
+              { loc: [3, 14] },
+              { loc: [14, 18] }
+            ]}
+          />
+          <Slide transition={["slide"]} bgColor="primary" textColor="primary">
+            <Heading textColor="secondary" caps fit>Service worker</Heading>
+            <Layout>
+              <Appear>
+                  <Fill>
+                    <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                      Write the logic yourself
+                    </Heading>
+                  </Fill>
+              </Appear>
+            </Layout>
+            <Layout>
+              <Appear>
+                <Fill>
+                  <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                    workbox
+                  </Heading>
+                </Fill>
+              </Appear>
+            </Layout>
+            <Layout>
+              <Fill>
+                <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                  sw-precache
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                  sw-toolbox
+                </Heading>
+              </Fill>
+            </Layout>
+            <Layout>
+              <Appear>
+                <Fill>
+                  <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                    @angular/service-worker
+                  </Heading>
+                </Fill>
+              </Appear>
+            </Layout>
+          </Slide>
           <Slide transition={["slide"]} bgColor="secondary">
             <Heading size={4} caps lineHeight={1} textColor="primary">
               I can haz?
@@ -322,7 +425,7 @@ export default class Presentation extends React.Component {
               <Heading size={8} lineHeight={1} textColor="primary">
                 <br/>
                 <br/>
-                Chrome + Firefox + Android
+                Chrome + Firefox + Opera
               </Heading>
             </Appear>
           </Slide>
@@ -344,20 +447,6 @@ export default class Presentation extends React.Component {
                 Background Sync
               </Heading>
             </Appear>
-          </Slide>
-          <Slide align="center center" transition={["slide"]} bgColor="primary" textColor="seconday">
-            <Appear>
-              <Heading fit>SWPrecacheWebpackPlugin</Heading>
-            </Appear>
-
-            <Layout>
-              <Fill>
-                <Image src={images.cogs} height="300px"/>
-              </Fill>
-              <Fill>
-                <Image src={images.webpack} height="300px"/>
-              </Fill>
-            </Layout>
           </Slide>
           <Slide transition={["slide"]} bgColor="secondary">
             <Heading size={1} fit caps lineHeight={1} textColor="primary">
@@ -435,6 +524,19 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
           <Slide transition={["slide"]} bgColor="secondary">
+            <Heading size={1} caps lineHeight={1} textColor="primary">
+              Safari 11.0
+            </Heading>
+            <br />
+            <Appear>
+              <BlockQuote>
+                <Quote textSize="1.5em" textColor="primary">
+                  Web applications saved to the home screen now support all features of modern WebKit...
+                </Quote>
+              </BlockQuote>
+            </Appear>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="secondary">
             <Heading size={1} fit caps lineHeight={1} textColor="primary">
               Progressive enhancement
             </Heading>
@@ -456,24 +558,23 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
           <Slide transition={["slide"]} bgColor="primary" textColor="secondary">
-            <Text textColor="secondary" textAlign="center" textSize="1em">Angular</Text>
-            <Image src={images.angular2hn} height="600px"/>
+            <Text textColor="secondary" textAlign="center" textSize="1em" margin="0 auto 50px">Angular</Text>
+            <Image src={images.angularMobile} height="500px"/>
           </Slide>
           <Slide transition={["slide"]} bgColor="#333" textColor="primary">
-            <Text textColor="primary" textAlign="center" textSize="1em">React</Text>
-            <Image src={images.citii} height="700px" margin="-20px auto 0px"/>
+            <Text textColor="primary" textAlign="center" textSize="1em" margin="0 auto 50px">React</Text>
+            <Image src={images.reactMobile} height="500px"/>
           </Slide>
-          <Slide transition={["slide"]} bgColor="secondary" textColor="primary">
+          <Slide transition={["slide"]} bgColor="#664466" textColor="primary">
+            <Text textColor="primary" textAlign="center" textSize="1em" margin="0 auto 50px">Polymer</Text>
+            <Image src={images.polymerMobile} height="500px"/>
+          </Slide>
+          <Slide transition={["slide"]} bgColor="#f67500" textColor="primary">
             <Text textColor="primary" textAlign="center" textSize="1em">Whatever you like</Text>
-            <Image src={images.emptyPhone} height="700px" margin="-20px auto 0px"/>
+            <Image src={images.emptyPhone} height="600px"/>
           </Slide>
           <Slide transition={["slide"]} bgColor="#f67500" textColor="secondary">
             <Image src={images.hnpwaShowcase} height="750px" margin="-30px 0px 0px -210px"/>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="secondary" textColor="primary">
-            <BlockQuote>
-              <Quote textSize="1.5em" textColor="primary">create-react-app</Quote>
-            </BlockQuote>
           </Slide>
           <Slide transition={["slide"]} bgColor="primary" textColor="secondary">
             <Image src={images.endMeme}/>
