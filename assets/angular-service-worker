@@ -1,4 +1,4 @@
-npm install --save-dev @angular/service-worker
+npm i --save-dev @angular/service-worker
 
 //angular-cli.json
 {

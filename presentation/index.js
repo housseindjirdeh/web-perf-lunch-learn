@@ -62,11 +62,11 @@ preloader(images);
 
 const theme = createTheme({
   primary: "white",
-  secondary: "#422d51",
+  secondary: "#122b45",
   tertiary: "#422e51",
   quartenary: "#CECECE"
 }, {
-  primary: "Montserrat",
+  primary: "Avenir",
   secondary: "Helvetica"
 });
 
@@ -456,7 +456,7 @@ export default class Presentation extends React.Component {
           <CodeSlide
             transition={["fade"]}
             lang="js"
-            code={'<link rel="manifest" href="/manifest.json">'}
+            code={'<link rel="manifest"href="/manifest.json">'}
             ranges={[
               { loc: [0, 1], title: "WEB APP MANIFEST" }
             ]}
@@ -488,8 +488,8 @@ export default class Presentation extends React.Component {
             <Image src={images.androidSplash} height="700px"/>
           </Slide>
           <Slide transition={["slide"]} bgColor="secondary" textColor="primary">
-            <Text textAlign="center" textColor="primary" textSize="1em">App Loaded</Text>
-            <Image src={images.androidApp} height="700px"/>
+            <Text textAlign="center" textColor="primary" textSize="1em" margin="0 0 100px 0">App Loaded</Text>
+            <Image src={images.angularMobile} height="500px"/>
           </Slide>
           <Slide transition={["slide"]} bgColor="secondary" textColor="primary">
             <Heading size={5} textColor="primary" caps>Safari on iOS</Heading>
@@ -521,19 +521,6 @@ export default class Presentation extends React.Component {
               <Text fit caps lineHeight={1} textColor="primary">
                 REALFAVICONGENERATOR
               </Text>
-            </Appear>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="secondary">
-            <Heading size={1} caps lineHeight={1} textColor="primary">
-              Safari 11.0
-            </Heading>
-            <br />
-            <Appear>
-              <BlockQuote>
-                <Quote textSize="1.5em" textColor="primary">
-                  Web applications saved to the home screen now support all features of modern WebKit...
-                </Quote>
-              </BlockQuote>
             </Appear>
           </Slide>
           <Slide transition={["slide"]} bgColor="secondary">
@@ -578,6 +565,25 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide transition={["slide"]} bgColor="primary" textColor="secondary">
             <Image src={images.endMeme}/>
+            <Layout>
+              <Fill>
+                <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                  Houssein Djirdeh
+                </Heading>
+              </Fill>
+            </Layout>
+            <Layout>
+              <Fill>
+                <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                  @hdjirdeh
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading size={6} caps textColor="primary" bgColor="secondary" margin={10}>
+                  houssein.me
+                </Heading>
+              </Fill>
+            </Layout>
           </Slide>
         </Deck>
       </Spectacle>

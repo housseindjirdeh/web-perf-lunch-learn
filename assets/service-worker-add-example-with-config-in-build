@@ -2,5 +2,5 @@
 
 "scripts": {
   ...
-  "build": "{build} && sw-precache --config=sw-precache-config.js"
+  "build": "{build} && sw-precache --config=sw-config.js"
 }

@@ -1,4 +1,4 @@
-// sw-precache-config.js
+// sw-config.js
 
 module.exports = {
   staticFileGlobs: [
